@@ -203,7 +203,7 @@ public class IfElseStatementTheme {
         }
 
         if (money / 100 > hundredHave & isEnoughtMoney & !isEqualMoney) {
-            hundredNeed = (money / 100 * hundredHave) / 100;
+            hundredNeed = (money - 100 * hundredHave) / 100;
             tenNeed = hundredNeed * 10;
             tenHave -= tenNeed;
             hundredCount = hundredHave;
