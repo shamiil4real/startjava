@@ -56,15 +56,15 @@ public class IfElseStatementTheme {
         if (num3 == 0) {
             System.out.println("Данное число - " + num3);
         } else if (num3 % 2 > 0) {
-            System.out.println(num3 + "- нечетное, положительное");
+            System.out.println(num3 + " - нечетное, положительное число");
         } else if (num3 % 2 == 0) {
             if (num3 < 0) {
-                System.out.println(num3 + " - четное, отрицательное");
+                System.out.println(num3 + " - четное, отрицательное число");
             } else {
-                System.out.println(num3 + "- четное, положительное");
+                System.out.println(num3 + "- четное, положительное число");
             }
         } else if (num3 % 2 < 0) {
-            System.out.println(num3 + " - нечетное, отрицательное");
+            System.out.println(num3 + " - нечетное, отрицательное число");
         }
 
         System.out.println("\n4.  Поиск одинаковых цифр в числах\n");
