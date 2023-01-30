@@ -1,7 +1,7 @@
 public class IfElseStatementTheme {
 
     public static void main(String[] args) {
-        System.out.println("1.  Перевод псевдокода на язык Java\n");
+        System.out.println("1. Перевод псевдокода на язык Java\n");
 
         int age = 100;
         boolean isMan = true;
@@ -34,7 +34,7 @@ public class IfElseStatementTheme {
             System.out.println("Вероятно, вас зовут не Миша или Inna");
         }
 
-        System.out.println("\n2.  Поиск max и min числа\n");
+        System.out.println("\n2. Поиск max и min числа\n");
 
         int num1 = 5;
         int num2 = 10;
@@ -49,7 +49,7 @@ public class IfElseStatementTheme {
             System.out.println("Числа: " + num1 + ", " + num2 + " - равны");
         }
 
-        System.out.println("\n3.  Проверка числа\n");
+        System.out.println("\n3. Проверка числа\n");
 
         int num3 = 5;
 
@@ -67,7 +67,7 @@ public class IfElseStatementTheme {
             System.out.println(num3 + " - нечетное, отрицательное число");
         }
 
-        System.out.println("\n4.  Поиск одинаковых цифр в числах\n");
+        System.out.println("\n4. Поиск одинаковых цифр в числах\n");
 
         int num4 = 267;
         int num5 = 257;
@@ -110,7 +110,7 @@ public class IfElseStatementTheme {
             System.out.println(symbol + "- это не буква и не число");
         }
 
-        System.out.println("\n6.  Подсчет суммы вклада и начисленных банком %\n");
+        System.out.println("\n6. Подсчет суммы вклада и начисленных банком %\n");
 
         int deposit = 300000;
         int percent = 5;
@@ -125,7 +125,7 @@ public class IfElseStatementTheme {
         System.out.println("Начисленный процент = " + (deposit / 100 * percent));
         System.out.println("Итоговая сумма с процентами = " + (deposit / 100 * percent + deposit));
 
-        System.out.println("\n7.  Определение оценки по предметам\n");
+        System.out.println("\n7. Определение оценки по предметам\n");
 
         int historyPercent = 59;
         int programmingPercent = 91;
@@ -153,7 +153,7 @@ public class IfElseStatementTheme {
         System.out.println("Средний балл по предметам = " + (historyGrade + programmingGrade) / 2);
         System.out.println("Средний процент по предметам = " + (historyPercent + programmingPercent) / 2);
 
-        System.out.println("\n8.  Расчет прибыли за год\n");
+        System.out.println("\n8. Расчет прибыли за год\n");
 
         int rent = 5000;
         int income = 13000;
@@ -196,7 +196,7 @@ public class IfElseStatementTheme {
                     hundredsCount = hundredsHave;
                     tensNeed = (hundredsNeed - hundredsHave) * 10;
                     tensCount = tensNeed;
-                    money -= hundredsHave * 100 + hundredsHave * 100;
+                    money -= hundredsHave * 100 + tensNeed * 10;
                 } else if (hundredsNeed <= hundredsHave) {
                     money -= 100 * hundredsNeed;
                     hundredsCount = hundredsNeed;
