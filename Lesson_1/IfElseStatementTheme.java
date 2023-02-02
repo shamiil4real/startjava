@@ -51,23 +51,23 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3. Проверка числа\n");
 
-        int num3 = 5;
+        int num3 = 0;
 
         if (num3 == 0) {
-            System.out.println("Данное число - " + num3);
-        } else if (num3 % 2 > 0) {
-            System.out.println(num3 + " - нечетное, положительное число");
+            System.out.print("Данное число - " + num3);
         } else if (num3 % 2 == 0) {
-            if (num3 < 0) {
-                System.out.println(num3 + " - четное, отрицательное число");
-            } else {
-                System.out.println(num3 + "- четное, положительное число");
-            }
-        } else if (num3 % 2 < 0) {
-            System.out.println(num3 + " - нечетное, отрицательное число");
+            System.out.print(num3 + " - четное");
+        } else {
+            System.out.print(num3 + " - нечетное");
         }
 
-        System.out.println("\n4. Поиск одинаковых цифр в числах\n");
+        if (num3 > 0) {
+            System.out.print(" положительное число");
+        } else {
+            System.out.print(" отрицательное число");
+        }
+
+        System.out.println("\n\n4. Поиск одинаковых цифр в числах\n");
 
         int num4 = 267;
         int num5 = 257;
@@ -186,7 +186,7 @@ public class IfElseStatementTheme {
 
         if (!isEnoughMoney) {
             System.out.println("Извините, у нас не хватает купюр");
-        } else if (isEnoughMoney) {
+        } else {
             hundredsCount = hundredsHave;
             tensCount = tensHave;
             onesCount = onesHave;
@@ -216,6 +216,6 @@ public class IfElseStatementTheme {
             System.out.println("Количество десятков: " + tensCount);
             System.out.println("Количество единиц: " + onesCount);
             System.out.println("Выдаваемая сумма = " + (hundredsCount * 100 + tensCount * 10 + onesCount));
-            }
+        }
     }
 }
