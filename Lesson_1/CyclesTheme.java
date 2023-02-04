@@ -25,7 +25,19 @@ public class CyclesTheme {
         int num3 = -1;
 
         int max = num1;
-        int min = num3;
+        int min = num2;
+
+        if (num3 > max) {
+            max = num3;
+        } else if (num2 > max) {
+            max = num2;
+        }
+
+        if (num1 < min) {
+            min = num1;
+        } else if (num3 < min) {
+            min = num3;
+        }
 
         for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
@@ -94,11 +106,11 @@ public class CyclesTheme {
 
         int rows = 5;
         int columns = 0;
-        while (columns < 5) {
-            int countRows = rows;
-            while (countRows > 0) {
+        while (rows > 0) {
+            int countColumns = columns;
+            while (countColumns < 5) {
                 System.out.print('#');
-                countRows--;
+                countColumns++;
             }
             System.out.println();
             rows--;
@@ -125,15 +137,14 @@ public class CyclesTheme {
 
         System.out.println("\n7. Отображение ASII-символов\n");
 
-        System.out.println(" Dec | Char" + "\n" +
-                " ----------");
-        for (int i = 33; i < 122; i++) {
-            if (i >= 33 && i <= 47 && i % 2 > 0) {
-                System.out.printf("%4d %c %2c %s", i, '|', (char) i, "\n ----------\n");
+        System.out.println(" Dec | Char" + "\n ----------");
+        for (int i = 1; i <= 127; i++) {
+            if (i >= '!' && i <= '/' && i % 2 > 0) {
+                System.out.printf("%4d %c %2c %s", i, '|', i, "\n ----------\n");
             }
 
-            if (i >= 97 && i <= 122 && i % 2 == 0) {
-                System.out.printf("%4d %c %2c %s", i, '|', (char) i, "\n ----------\n");
+            if (i >= 'a' && i <= 'z' && i % 2 == 0) {
+                System.out.printf("%4d %c %2c %s", i, '|', i, "\n ----------\n");
             }
         }
 
@@ -167,11 +178,11 @@ public class CyclesTheme {
         int sumRightHalfDigits = 0;
 
         for (int i = 0; i < 6; i++) {
-            int remainder3 = luckyNum % 10;
+            int remainder = luckyNum % 10;
             if (i < 3) {
-                sumLeftHalfDigits += remainder3;
+                sumLeftHalfDigits += remainder;
             } else {
-                sumRightHalfDigits += remainder3;
+                sumRightHalfDigits += remainder;
             }
             luckyNum /= 10;
         }
