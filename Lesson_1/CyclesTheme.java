@@ -135,7 +135,7 @@ public class CyclesTheme {
             }
         } while (columns < 5);
 
-        System.out.println("\n7. Отображение ASII-символов\n");
+        System.out.println("\n7. Отображение ASCII-символов\n");
 
         System.out.println(" Dec | Char" + "\n ----------");
         for (int i = 1; i <= 127; i++) {
