@@ -1,10 +1,10 @@
 public class Calculator {
 
     public static void main(String[] args) {
-        int num1 = 11; long copyNum1 = num1;
+        int num1 = 4;
         char sign = '^';
-        int num2 = 3;
-        long result = 0;
+        int num2 = 5;
+        long result = 1;
 
         if (sign == '+') {
             result = num1 + num2;
@@ -15,10 +15,9 @@ public class Calculator {
         } else if (sign == '/') {
             result = num1 / num2;
         } else if (sign == '^') {
-            for (int i = 1; i < num2; i++) {
-                copyNum1 *= num1;
+            for (int i = 0; i < num2; i++) {
+                result *= num1;
             }
-            result = copyNum1;
         } else if (sign == '%') {
             result = num1 % num2;
         }
