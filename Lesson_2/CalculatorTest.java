@@ -21,9 +21,9 @@ public class CalculatorTest {
             test.calculate();
 
             do {
-                Scanner scannerAnswer = new Scanner(System.in);
+                Scanner answerScanner = new Scanner(System.in);
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
-                test.setAnswer(scannerAnswer.nextLine());
+                test.setAnswer(answerScanner.nextLine());
 
                 if (test.getAnswer().equals("no")) {
                     System.out.println("Программа завершена");
