@@ -1,29 +1,20 @@
 public class Calculator {
 
-    private int firstNumber;
-    private int secondNumber;
+    private int numder1;
+    private int number2;
     private char mathOperatore;
     private long result;
-    private String answer;
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
+    public void setNumber1(int numder1) {
+        this.numder1 = numder1;
     }
 
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
+    public void setNumber2(int number2) {
+        this.number2 = number2;
     }
 
     public void setMathOperatore(char mathOperatore) {
         this.mathOperatore = mathOperatore;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-    public String getAnswer() {
-        return answer;
     }
 
     public void calculate() {
@@ -31,31 +22,30 @@ public class Calculator {
 
         switch(mathOperatore) {
             case '+' :
-                result = firstNumber + secondNumber;
+                result = numder1 + number2;
                 break;
             case '-' :
-                result = firstNumber - secondNumber;
+                result = numder1 - number2;
                 break;
             case '*' :
-                result = firstNumber * secondNumber;
+                result = numder1 * number2;
                 break;
             case '/' :
-                result = firstNumber / secondNumber;
+                result = numder1 / number2;
                 break;
             case '^' :
-                for (int i = 0; i < secondNumber; i++) {
-                    result *= firstNumber;
+                for (int i = 0; i < number2; i++) {
+                    result *= numder1;
                 }
                 break;
             case '%' :
-                result = firstNumber % secondNumber;
+                result = numder1 % number2;
                 break;
             default :
                 result = 0;
-                System.out.println("Укажите знак");
-                break;
+                System.out.println("Вы указали некорректный математический символ");
         }
 
-        System.out.println(firstNumber + " " + mathOperatore + " " + secondNumber + " = " + result);
+        System.out.println(numder1 + " " + mathOperatore + " " + number2 + " = " + result);
     }
 }
