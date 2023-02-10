@@ -4,7 +4,7 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        String answer = new String();
+        String answer = "";
         Scanner scanner = new Scanner(System.in);
 
         do {
@@ -19,12 +19,9 @@ public class CalculatorTest {
             do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
                 answer = scanner.next();
-
-                if (answer.equals("no")) {
-                    System.out.println("Программа завершена");
-                    break;
-                }
-            } while (!answer.equals("yes"));
+            } while (!answer.equals("no") && !answer.equals("yes"));
         } while (answer.equals("yes"));
+
+        System.out.println("Программа завершена");
     }
 }

@@ -1,12 +1,12 @@
 public class Calculator {
 
-    private int numder1;
+    private int number1;
     private int number2;
     private char mathOperatore;
     private long result;
 
-    public void setNumber1(int numder1) {
-        this.numder1 = numder1;
+    public void setNumber1(int number1) {
+        this.number1 = number1;
     }
 
     public void setNumber2(int number2) {
@@ -22,30 +22,30 @@ public class Calculator {
 
         switch(mathOperatore) {
             case '+' :
-                result = numder1 + number2;
+                result = number1 + number2;
                 break;
             case '-' :
-                result = numder1 - number2;
+                result = number1 - number2;
                 break;
             case '*' :
-                result = numder1 * number2;
+                result = number1 * number2;
                 break;
             case '/' :
-                result = numder1 / number2;
+                result = number1 / number2;
                 break;
             case '^' :
                 for (int i = 0; i < number2; i++) {
-                    result *= numder1;
+                    result *= number1;
                 }
                 break;
             case '%' :
-                result = numder1 % number2;
+                result = number1 % number2;
                 break;
             default :
-                result = 0;
                 System.out.println("Вы указали некорректный математический символ");
+                return;
         }
 
-        System.out.println(numder1 + " " + mathOperatore + " " + number2 + " = " + result);
+        System.out.println(number1 + " " + mathOperatore + " " + number2 + " = " + result);
     }
 }
