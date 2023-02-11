@@ -55,18 +55,6 @@ public class Jaeger {
         this.armor = armor;
     }
 
-    @Override
-    public String toString() {
-        return "Название модели: " + modelName + "\n" +
-                "Версия: " + mark + "\n" +
-                "Происхождение: " + origin + "\n" +
-                "Высота: " + height + " м\n" +
-                "Вес: " + weight + " т\n" +
-                "Скорость: " + speed + "\n" +
-                "Сила: " + strength + "\n" +
-                "Броня: " + armor;
-    }
-
     boolean drift() {
         System.out.println("Вы вошли в дрифт");
         return true;
@@ -78,5 +66,17 @@ public class Jaeger {
 
     void scanKaiju() {
         System.out.println("Сканирование произведено");
+    }
+
+    @Override
+    public String toString() {
+        return "Название модели: " + modelName + "\n" +
+                "Версия: " + mark + "\n" +
+                "Происхождение: " + origin + "\n" +
+                "Высота: " + height + " м\n" +
+                "Вес: " + weight + " т\n" +
+                "Скорость: " + speed + "\n" +
+                "Сила: " + strength + "\n" +
+                "Броня: " + armor;
     }
 }
