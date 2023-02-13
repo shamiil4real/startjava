@@ -24,6 +24,6 @@ public class GuessNumberTest {
             } while (!answer.equals("no") && !answer.equals("yes"));
         } while (answer.equals("yes"));
 
-        System.out.println("Игра завершена");
+        System.out.println("Game Over");
     }
 }
