@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.base;
+
 public class IfElseStatementTheme {
 
     public static void main(String[] args) {
@@ -63,7 +65,7 @@ public class IfElseStatementTheme {
 
         if (num3 > 0) {
             System.out.print(" положительное число");
-        } else {
+        } else if (num3 < 0) {
             System.out.print(" отрицательное число");
         }
 
