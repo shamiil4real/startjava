@@ -87,20 +87,20 @@ public class ArrayTheme {
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке\n");
 
         char[] charArr = new char[26];
-        int index = 0;
 
+        int index = 0;
         for (int i = 65; i < 91; i++) {
             charArr[index] = (char) i;
             index++;
         }
 
-        int temp = charArr.length - 2;
+        index = charArr.length - 2;
         for (int i = charArr.length - 1; i > -1; i--) {
-            for (int j = charArr.length -1; j > temp; j--) {
+            for (int j = charArr.length -1; j > index; j--) {
                 System.out.print(charArr[j]);
             }
             System.out.println();
-            temp--;
+            index--;
         }
 
         System.out.println("\n5. Генерация уникальных чисел\n");
