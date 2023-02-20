@@ -3,85 +3,85 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Arrays;
 
 public class ArrayTheme {
-    public static void printArray(int[] numsArr) {
-        for (int i : numsArr) {
+    public static void printArray(int[] intArr) {
+        for (int i : intArr) {
             System.out.print(i + " ");
         }
     }
 
-    public static void printArray(double[] doublesArr) {
-        for (int i = 0; i < doublesArr.length; i++) {
+    public static void printArray(double[] doubleArr) {
+        for (int i = 0; i < doubleArr.length; i++) {
             if (i == 8) {
                 System.out.println();
                 ;
             }
-            System.out.printf("%4.3f %s", doublesArr[i], " ");
+            System.out.printf("%4.3f %s", doubleArr[i], " ");
         }
     }
 
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива\n");
 
-        int[] numsArr = new int[] {2, 4, 7, 6, 5, 3, 1};
+        int[] intArr = new int[] {2, 4, 7, 6, 5, 3, 1};
 
         System.out.print("До: ");
-        ArrayTheme.printArray(numsArr);
+        ArrayTheme.printArray(intArr);
 
-        for (int i = 0; i < numsArr.length / 2; i++) {
-            int temp = numsArr[i];
-            numsArr[i] = numsArr[numsArr.length - (i + 1)];
-            numsArr[numsArr.length - (i + 1)] = temp;
+        for (int i = 0; i < intArr.length / 2; i++) {
+            int temp = intArr[i];
+            intArr[i] = intArr[intArr.length - (i + 1)];
+            intArr[intArr.length - (i + 1)] = temp;
         }
 
         System.out.print("\nПосле: ");
-        ArrayTheme.printArray(numsArr);
+        ArrayTheme.printArray(intArr);
 
         System.out.println("\n\n2. Вывод произведения массива");
 
-        int[] numsArr2 = new int[10];
+        int[] intArr2 = new int[10];
 
-        for (int i = 0; i < numsArr2.length; i++) {
-            numsArr2[i] = i;
+        for (int i = 0; i < intArr2.length; i++) {
+            intArr2[i] = i;
         }
 
         int multiply = 1;
-        for (int i = 1; i < numsArr2.length - 1; i++) {
-            multiply *= numsArr2[i];
+        for (int i = 1; i < intArr2.length - 1; i++) {
+            multiply *= intArr2[i];
         }
 
-        for (int i = 0; i < numsArr2.length; i++) {
+        for (int i = 0; i < intArr2.length; i++) {
             if (i > 0 && i < 8) {
-                System.out.print(numsArr2[i] + " * ");
+                System.out.print(intArr2[i] + " * ");
             } else if (i == 0 || i == 9) {
-                System.out.println("\nЧисло " + numsArr2[i] + " - индекс " + i);
+                System.out.println("\nЧисло " + intArr2[i] + " - индекс " + i);
             } else {
-                System.out.print(numsArr2[i] + " = " + multiply);
+                System.out.print(intArr2[i] + " = " + multiply);
             }
         }
 
         System.out.println("\n3. Удаление элементов массива\n");
 
-        double[] doublesArr = new double[15];
+        double[] doubleArr = new double[15];
 
-        for (int i = 0; i < doublesArr.length; i++) {
+        for (int i = 0; i < doubleArr.length; i++) {
             double random = Math.random();
-            doublesArr[i] = random;
+            doubleArr[i] = random;
         }
 
         System.out.println("Исходный массив:");
-        ArrayTheme.printArray(doublesArr);
+        ArrayTheme.printArray(doubleArr);
 
-        double middleIndexNumber = doublesArr[doublesArr.length / 2];
+        double middleIndexNumber = doubleArr[doubleArr.length / 2];
         int countCells = 0;
-        for (int i = 0; i < doublesArr.length; i++) {
-            if (doublesArr[i] > middleIndexNumber) {
-                doublesArr[i] = 0;
+        for (int i = 0; i < doubleArr.length; i++) {
+            if (doubleArr[i] > middleIndexNumber) {
+                doubleArr[i] = 0;
                 countCells++;
             }
         }
 
         System.out.println("\nИзмененный массив:");
-        ArrayTheme.printArray(doublesArr);
+        ArrayTheme.printArray(doubleArr);
 
         System.out.println("\nКоличество обнуленных ячеек: " + countCells);
 
@@ -106,34 +106,34 @@ public class ArrayTheme {
 
         System.out.println("\n5. Генерация уникальных чисел\n");
 
-        int numsArr4[] = new int[30];
+        int intArr4[] = new int[30];
 
-        for (int i = 0; i < numsArr4.length; i++) {
+        for (int i = 0; i < intArr4.length; i++) {
             boolean isDuplicate = true;
             while (isDuplicate) {
                 isDuplicate = false;
                 int random = (int) (Math.random() * 40 + 60);
                 for (int j = 0; j < i; j++) {
-                    if (numsArr4[j] == random) {
+                    if (intArr4[j] == random) {
                         isDuplicate = true;
                         break;
                     }
                 }
                 if (!isDuplicate) {
-                    numsArr4[i] = random;
+                    intArr4[i] = random;
                 }
             }
         }
 
-        Arrays.sort(numsArr4);
+        Arrays.sort(intArr4);
 
         int rowCount = 0;
-        for (int i = 0; i < numsArr4.length; i++) {
+        for (int i = 0; i < intArr4.length; i++) {
             if (rowCount == 10) {
                 System.out.println();
                 rowCount = 0;
             }
-            System.out.print(numsArr4[i] + " ");
+            System.out.print(intArr4[i] + " ");
             rowCount++;
         }
 
