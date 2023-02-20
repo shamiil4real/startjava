@@ -3,6 +3,7 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Arrays;
 
 public class ArrayTheme {
+
     public static void printArray(int[] intArr) {
         for (int i : intArr) {
             System.out.print(i + " ");
@@ -13,7 +14,6 @@ public class ArrayTheme {
         for (int i = 0; i < doubleArr.length; i++) {
             if (i == 8) {
                 System.out.println();
-                ;
             }
             System.out.printf("%4.3f %s", doubleArr[i], " ");
         }
@@ -71,10 +71,9 @@ public class ArrayTheme {
         System.out.println("Исходный массив:");
         ArrayTheme.printArray(doubleArr);
 
-        double middleIndexNumber = doubleArr[doubleArr.length / 2];
         int countCells = 0;
         for (int i = 0; i < doubleArr.length; i++) {
-            if (doubleArr[i] > middleIndexNumber) {
+            if (doubleArr[i] > doubleArr[doubleArr.length / 2]) {
                 doubleArr[i] = 0;
                 countCells++;
             }
@@ -154,11 +153,11 @@ public class ArrayTheme {
         System.arraycopy(stringArr, 7, stringArr2, 4, 3);
 
         System.out.println("Оригинальный массив:");
-        for (String s : stringArr2) {
+        for (String s : stringArr) {
             System.out.print(s + ", ");
         }
 
-        System.out.println("\nСкопированный массив:");
+        System.out.println("\nНовый массив:");
         for (String s : stringArr2) {
             System.out.print(s + ", ");
         }
