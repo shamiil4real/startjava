@@ -76,8 +76,8 @@ public class ArrayTheme {
         }
 
         int index = len - 2;
-        for (int i = len - 1; i > -1; i--) {
-            for (int j = len -1; j > index; j--) {
+        for (int i = len - 1; i > - 1; i--) {
+            for (int j = len - 1; j > index; j--) {
                 System.out.print(alphabet[j]);
             }
             System.out.println();
