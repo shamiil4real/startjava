@@ -124,7 +124,7 @@ public class ArrayTheme {
 
         int countNotBlank = 0;
         for (String s : scrString) {
-            if(!s.isBlank()) {
+            if (!s.isBlank()) {
                 countNotBlank++;
             }
         }
