@@ -132,23 +132,20 @@ public class ArrayTheme {
         String[] destString = new String[countNotBlank];
 
         index = 0;
-        len = 0;
         for (int i = 0; i < scrString.length; i++) {
+            len = 0;
             if (!scrString[i].isBlank()) {
                 int j = i;
                 while (!scrString[j].isBlank()) {
                     len++;
                     j++;
                 }
-                System.out.println(i);
                 System.arraycopy(scrString, i, destString, index, len);
                 i += len;
                 index += len;
             }
-            len = 0;
         }
 
-        System.out.println();
         System.out.println("Оригинальный массив:");
         for (String s : scrString) {
             System.out.print(s + ", ");
