@@ -14,10 +14,10 @@ public class ArrayTheme {
         printArray(intArr);
 
         for (int i = 0; i < len; i++) {
-            int temp = intArr[i];
-            intArr[i] = intArr[len - 1];
-            intArr[len - 1] = temp;
             len--;
+            int temp = intArr[i];
+            intArr[i] = intArr[len];
+            intArr[len] = temp;
         }
 
         System.out.print("\nПосле: ");
@@ -35,11 +35,11 @@ public class ArrayTheme {
         int product = 1;
         for (int i = 1; i < len - 1; i++) {
             product *= intArr2[i];
-            String symbol = i != 8 ? " * " : " = " + product;
-            System.out.print(intArr2[i] + symbol);
+            String result = i != len - 2 ? intArr2[i] + " * " : intArr2[i] + " = " + product;
+            System.out.print(result);
         }
-        System.out.println("\nЧисло " + intArr2[0] + " с индексом " + 0 + "\n" +
-                "Число " + intArr2[9] + " с индексом " + (len - 1));
+        System.out.println("\nЧисло " + intArr2[0] + " с индексом 0 \nЧисло" +
+                intArr2[9] + " с индексом " + (len - 1));
 
         System.out.println("\n3. Удаление элементов массива\n");
 
@@ -132,6 +132,7 @@ public class ArrayTheme {
         String[] destString = new String[countNotBlank];
 
         index = 0;
+        len = 0;
         for (int i = 0; i < scrString.length; i++) {
             if (!scrString[i].isBlank()) {
                 int j = i;
@@ -139,6 +140,7 @@ public class ArrayTheme {
                     len++;
                     j++;
                 }
+                System.out.println(i);
                 System.arraycopy(scrString, i, destString, index, len);
                 i += len;
                 index += len;
@@ -146,6 +148,7 @@ public class ArrayTheme {
             len = 0;
         }
 
+        System.out.println();
         System.out.println("Оригинальный массив:");
         for (String s : scrString) {
             System.out.print(s + ", ");
