@@ -1,11 +1,18 @@
 package com.startjava.lesson_2_3_4.calculator;
 
-public class Calculator {
+import java.sql.SQLOutput;
 
-    private int number1;
-    private int number2;
+public class Calculator {
+    private String mathOperation;
+
+    private double number1;
+    private double number2;
     private char mathOperatore;
-    private long result;
+    private double result;
+
+    public Calculator (String mathOperation) {
+        this.mathOperation = mathOperation;
+    }
 
     public void setNumber1(int number1) {
         this.number1 = number1;
@@ -23,7 +30,7 @@ public class Calculator {
         result = 1;
 
         switch(mathOperatore) {
-            case '+' :
+            case '+':
                 result = number1 + number2;
                 break;
             case '-' :
@@ -36,18 +43,19 @@ public class Calculator {
                 result = number1 / number2;
                 break;
             case '^' :
-                for (int i = 0; i < number2; i++) {
-                    result *= number1;
-                }
+                result = Math.pow(number1, number2);
                 break;
             case '%' :
                 result = number1 % number2;
                 break;
             default :
                 System.out.println("Вы указали некорректный математический символ");
-                return;
         }
 
-        System.out.println(number1 + " " + mathOperatore + " " + number2 + " = " + result);
+        if (result % 1 == 0.0) {
+            System.out.println(String.format("%.0f", result));
+        } else {
+            System.out.println(result);
+        }
     }
 }

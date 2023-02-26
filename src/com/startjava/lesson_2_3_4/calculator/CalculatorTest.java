@@ -1,28 +1,36 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        String answer = "";
+        String answer = "yes";
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.print("Введите первое число: ");
-            calc.setNumber1(scanner.nextInt());
-            System.out.print("Введите знак математической операции: " );
-            calc.setMathOperatore(scanner.next().charAt(0));
-            System.out.print("Введите второе число: ");
-            calc.setNumber2(scanner.nextInt());
-            calc.calculate();
-
-            do {
+            if (!answer.equals("no") && !answer.equals("yes")) {
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
                 answer = scanner.next();
-            } while (!answer.equals("no") && !answer.equals("yes"));
-        } while (answer.equals("yes"));
+                scanner.nextLine();
+                continue;
+            }
+
+            System.out.print("Введите математическое выражение: ");
+            String input = scanner.nextLine();
+            Calculator calc = new Calculator(input);
+            String[] mathOperation = input.split(" ");
+
+            calc.setNumber1(Integer.parseInt(mathOperation[0]));
+            calc.setNumber2(Integer.parseInt(mathOperation[2]));
+            calc.setMathOperatore(mathOperation[1].charAt(0));
+            calc.calculate();
+
+            System.out.println("Хотите продолжить вычисления? [yes/no]");
+            answer = scanner.next();
+            scanner.nextLine();
+        } while (!answer.equals("no"));
 
         System.out.println("Программа завершена");
     }
