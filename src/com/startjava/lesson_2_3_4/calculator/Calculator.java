@@ -3,8 +3,8 @@ package com.startjava.lesson_2_3_4.calculator;
 import java.sql.SQLOutput;
 
 public class Calculator {
+    
     private String mathOperation;
-
     private double number1;
     private double number2;
     private char mathOperatore;
