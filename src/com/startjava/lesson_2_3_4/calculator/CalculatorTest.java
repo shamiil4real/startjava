@@ -24,7 +24,7 @@ public class CalculatorTest {
         System.out.println("Программа завершена");
     }
 
-    public static void showResult(double result) {
+    private static void showResult(double result) {
         if (result % 1 == 0) {
             System.out.println((int) result);
         } else {
