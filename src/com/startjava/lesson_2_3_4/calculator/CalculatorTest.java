@@ -13,23 +13,22 @@ public class CalculatorTest {
             if (answer.equals("yes")) {
                 System.out.print("Введите математическое выражение: ");
                 String input = scanner.nextLine();
-
-                if (calc.calculate(input) % 1 == 0.0) {
-                    System.out.println((int)calc.calculate(input));
-                } else {
-                    System.out.println(calc.calculate(input));
-                }
+                showResult(calc.calculate(input));
             }
 
-            System.out.println("Хотите продолжить вычисления? [yes/no]");
+            System.out.print("Хотите продолжить вычисления? [yes/no] ");
             answer = scanner.next();
             scanner.nextLine();
-
-            if (answer.equals("no")) {
-                break;
-            }
-        } while (true);
+        } while (!answer.equals("no"));
 
         System.out.println("Программа завершена");
+    }
+
+    public static void showResult(double result) {
+        if (result % 1 == 0) {
+            System.out.println((int) result);
+        } else {
+            System.out.println(result);
+        }
     }
 }

@@ -5,38 +5,30 @@ public class Calculator {
     private String[] mathOperation;
     private int number1;
     private int number2;
-    private char mathOperatore;
-    private double result;
+    private char mathSign;
 
-    public double calculate(String input) {
-        String[] mathOperation = input.split(" ");
-        number1 = Integer.parseInt(mathOperation[0]);
-        number2 = Integer.parseInt(mathOperation[2]);
-        mathOperatore = mathOperation[1].charAt(0);
+    public double calculate(String expression) {
+        String[] partsExpression = expression.split(" ");
+        number1 = Integer.parseInt(partsExpression[0]);
+        number2 = Integer.parseInt(partsExpression[2]);
+        mathSign = partsExpression[1].charAt(0);
 
-        result = 1;
-        switch(mathOperatore) {
+        switch(mathSign) {
             case '+':
-                result = number1 + number2;
-                break;
+                return number1 + number2;
             case '-' :
-                result = number1 - number2;
-                break;
+                return number1 - number2;
             case '*' :
-                result = number1 * number2;
-                break;
+                return number1 * number2;
             case '/' :
-                result = number1 / number2;
-                break;
+                return number1 / number2;
             case '^' :
-                result = Math.pow(number1, number2);
-                break;
+                return Math.pow(number1, number2);
             case '%' :
-                result = number1 % number2;
-                break;
+                return number1 % number2;
             default :
                 System.out.println("Вы указали некорректный математический символ");
+                return 0;
         }
-        return result;
     }
 }
