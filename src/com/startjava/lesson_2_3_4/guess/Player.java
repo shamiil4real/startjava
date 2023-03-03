@@ -13,11 +13,8 @@ public class Player {
     }
 
     public int[] getNumbers() {
-        return numbers;
-    }
-
-    public void addAttempt() {
-        attemptsCount++;
+        int[] numbersCopy = Arrays.copyOf(numbers, numbers.length);
+        return numbersCopy;
     }
 
     public int getAttemptsCount() {
@@ -28,24 +25,13 @@ public class Player {
         return name;
     }
 
-    public void setElementToArray(int[] array, int element) {
-        array[attemptsCount - 1] = element;
+    public void addNumber(int number) {
+        numbers[attemptsCount] = number;
+        attemptsCount++;
     }
 
-    public int getElementFromArray(int[] array, int index) {
-        return array[index - 1];
-    }
-
-    public void showPlayerAttempts() {
-        System.out.print("Попытки игрока " + name + ": ");
-        int[] playersTry = Arrays.copyOf(numbers, attemptsCount);
-        for (int i = 0; i < playersTry.length; i++) {
-            if (playersTry[i] == 0) {
-                break;
-            }
-            System.out.print(playersTry[i] + " ");
-        }
-        System.out.println();
+    public int getLastNumber() {
+        return numbers[attemptsCount - 1];
     }
 
     public void resetAttempts() {
