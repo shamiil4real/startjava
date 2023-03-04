@@ -18,8 +18,8 @@ public class GuessNumberTest {
             if (answer.equals("yes")) {
                 game.start();
             }
-             System.out.print("Хотите продолжить игру? [yes/no] ");
-             answer = scanner.next();
+            System.out.print("Хотите продолжить игру? [yes/no] ");
+            answer = scanner.next();
         } while (!answer.equals("no"));
 
         System.out.println("Game Over");

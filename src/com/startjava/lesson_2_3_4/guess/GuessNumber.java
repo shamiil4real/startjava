@@ -8,7 +8,7 @@ public class GuessNumber {
 
     private Player player1;
     private Player player2;
-    private static int goalNumber;
+    private int goalNumber;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -21,10 +21,7 @@ public class GuessNumber {
         goalNumber = random.nextInt(100) + 1;
 
         do {
-            makeTurn(player1);
-            if (!isGoalNumber(player1)) {
-                makeTurn(player2);
-            } else {
+            if (isGuessed(player1) || isGuessed(player2)) {
                 break;
             }
 
@@ -32,13 +29,14 @@ public class GuessNumber {
                 System.out.println("Game Over, у обоих игроков закончились попытки");
                 break;
             }
-        } while (!isGoalNumber(player2));
+        } while (true);
 
         showPlayerAttempts(player1); showPlayerAttempts(player2);
-        resetGame(player1, player2);
+        player1.resetNumbers(); player2.resetNumbers();
+        player1.resetAttempts(); player2.resetAttempts();
     }
 
-    private static void makeTurn(Player player) {
+    private boolean isGuessed(Player player) {
         Scanner input = new Scanner(System.in);
         System.out.print(player.getName() + ", введите число: ");
         player.addNumber(input.nextInt());
@@ -46,6 +44,7 @@ public class GuessNumber {
         if (player.getLastNumber() == goalNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + goalNumber + " c " +
                     player.getAttemptsCount() + " попытки");
+            return true;
         }
 
         if (player.getLastNumber() < goalNumber) {
@@ -59,38 +58,19 @@ public class GuessNumber {
         if (!isEnoughAttempts(player)) {
             System.out.println("У игрока " + player.getName() + " закончились попытки");
         }
+
+        return false;
     }
 
-    private static boolean isGoalNumber(Player player) {
-        if (player.getLastNumber() == goalNumber) {
-            return true;
-        } else {
-            return false;
-        }
+    private boolean isEnoughAttempts(Player player) {
+        return player.getAttemptsCount() < 10;
     }
 
-    private static boolean isEnoughAttempts(Player player) {
-        if (player.getAttemptsCount() < 10) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private static void showPlayerAttempts(Player player) {
+    private void showPlayerAttempts(Player player) {
         System.out.print("Попытки игрока " + player.getName() + ": ");
-        for (int i = 0; i < player.getNumbers().length; i++) {
-            if (player.getNumbers()[i] == 0) {
-                break;
-            }
-            System.out.print(player.getNumbers()[i] + " ");
+        for (int i : player.getNumbers()) {
+            System.out.print(i + " ");
         }
         System.out.println();
-    }
-
-    private static void resetGame(Player player1, Player player2) {
-        Arrays.fill(player1.getNumbers(), 0, player1.getAttemptsCount(), 0);
-        Arrays.fill(player2.getNumbers(), 0, player2.getAttemptsCount(), 0);
-        player1.resetAttempts(); player2.resetAttempts();
     }
 }

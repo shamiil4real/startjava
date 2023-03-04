@@ -12,17 +12,16 @@ public class Player {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int[] getNumbers() {
-        int[] numbersCopy = Arrays.copyOf(numbers, numbers.length);
-        return numbersCopy;
+        return Arrays.copyOf(numbers, attemptsCount);
     }
 
     public int getAttemptsCount() {
         return attemptsCount;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void addNumber(int number) {
@@ -32,6 +31,10 @@ public class Player {
 
     public int getLastNumber() {
         return numbers[attemptsCount - 1];
+    }
+
+    public void resetNumbers() {
+        Arrays.fill(numbers, 0, attemptsCount, 0);
     }
 
     public void resetAttempts() {
