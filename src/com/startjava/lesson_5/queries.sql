@@ -26,8 +26,8 @@ SELECT *
 SELECT *
   FROM Jaegers
  WHERE launch = 
-    (SELECT MIN(launch)
-       FROM Jaegers);
+      (SELECT MIN(launch)
+         FROM Jaegers);
 
 -- Отобразить роботов, которые уничтожили больше всего kaiju
 SELECT *
