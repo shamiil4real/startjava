@@ -20,10 +20,6 @@ public class Player {
         return Arrays.copyOf(numbers, attemptsCount);
     }
 
-    public int getAttemptsCount() {
-        return attemptsCount;
-    }
-
     public void addNumber(int number) {
         numbers[attemptsCount] = number;
         attemptsCount++;
@@ -33,11 +29,12 @@ public class Player {
         return numbers[attemptsCount - 1];
     }
 
-    public void resetNumbers() {
-        Arrays.fill(numbers, 0, attemptsCount, 0);
+    public int getAttemptsCount() {
+        return attemptsCount;
     }
 
-    public void resetAttempts() {
+    public void clearAttempts() {
+        Arrays.fill(numbers, 0, attemptsCount, 0);
         attemptsCount = 0;
     }
 }

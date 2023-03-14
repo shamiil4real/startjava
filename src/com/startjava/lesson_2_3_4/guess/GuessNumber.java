@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.guess;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -25,15 +24,16 @@ public class GuessNumber {
                 break;
             }
 
-            if (!isEnoughAttempts(player1) && !isEnoughAttempts(player2)) {
+            if (!hasAttempts(player1) && !hasAttempts(player2)) {
                 System.out.println("Game Over, у обоих игроков закончились попытки");
                 break;
             }
         } while (true);
 
-        showPlayerAttempts(player1); showPlayerAttempts(player2);
-        player1.resetNumbers(); player2.resetNumbers();
-        player1.resetAttempts(); player2.resetAttempts();
+        showPlayerAttempts(player1);
+        showPlayerAttempts(player2);
+        player1.clearAttempts();
+        player2.clearAttempts();
     }
 
     private boolean isGuessed(Player player) {
@@ -55,14 +55,14 @@ public class GuessNumber {
                     " больше того, что загадал компьютер");
         }
 
-        if (!isEnoughAttempts(player)) {
+        if (!hasAttempts(player)) {
             System.out.println("У игрока " + player.getName() + " закончились попытки");
         }
 
         return false;
     }
 
-    private boolean isEnoughAttempts(Player player) {
+    private boolean hasAttempts(Player player) {
         return player.getAttemptsCount() < 10;
     }
 
